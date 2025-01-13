@@ -33,6 +33,7 @@
     "@react-native/eslint-config": "0.76.5",
     "@react-native/metro-config": "0.76.5",
     "@react-native/typescript-config": "0.76.5",
+    "@types/firebase": "^3.2.3",
     "@types/react": "^18.2.6",
     "@types/react-native-sqlite-storage": "^6.0.5",
     "@types/react-test-renderer": "^18.0.0",

@@ -6,13 +6,14 @@ import AddMusic from './src/screens/AddMusic';
 import EditMusic from './src/screens/EditMusic';
 import DetailMusic from './src/screens/DetailMusic';
 import StartScreen from './src/screens/StartScreen';
-import LoginScreen from './src/screens/LoginScreen'; // Tambahkan LoginScreen
-import {setupDatabase} from './src/api/setupDatabase'; // Impor setupDatabase
+import LoginScreen from './src/screens/authScreen/Login';
+import RegisterScreen from './src/screens/authScreen/Register';
+import LupaPasswordScreen from './src/screens/authScreen/LupaPassword'; // Impor LupaPassword
+import {setupDatabase} from './src/api/setupDatabase';
 
 const Stack = createStackNavigator();
 
 export default function App() {
-  // Panggil setupDatabase di dalam useEffect
   useEffect(() => {
     setupDatabase();
   }, []);
@@ -27,7 +28,12 @@ export default function App() {
         />
         <Stack.Screen
           name="Login"
-          component={LoginScreen} // Tambahkan route untuk LoginScreen
+          component={LoginScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Register"
+          component={RegisterScreen}
           options={{headerShown: false}}
         />
         <Stack.Screen
@@ -48,6 +54,11 @@ export default function App() {
         <Stack.Screen
           name="DetailMusic"
           component={DetailMusic}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="LupaPassword" // Tambahkan layar LupaPassword
+          component={LupaPasswordScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
